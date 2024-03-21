@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 # Set OpenAI API key
-OPENAI_API_KEY = os.get("OPENAIAPIKEY")
+OPENAI_API_KEY = os.getenv("OPENAIAPIKEY")
 # Function to process PDF and answer query
 def process_pdf_and_answer(pdf_file, query):
     # Initialize OpenAI embeddings
