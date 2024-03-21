@@ -7,9 +7,11 @@ from typing_extensions import Concatenate
 from langchain.chains.question_answering import load_qa_chain
 from langchain_openai import OpenAI
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 # Set OpenAI API key
-
+OPENAI_API_KEY = os.get("OPENAIAPIKEY")
 # Function to process PDF and answer query
 def process_pdf_and_answer(pdf_file, query):
     # Initialize OpenAI embeddings
