@@ -51,7 +51,7 @@ def main():
     st.title("PDF Query Answering System")
 
     # Divide layout into three columns
-    col1, col2,col3 = st.columns([3, 1, 3])
+    col1, col2,col3 = st.columns([5, 1, 5])
 
     # Column 1: Upload PDFs and ask questions
     with col1:
