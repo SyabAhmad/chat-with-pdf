@@ -48,7 +48,9 @@ def process_pdf_and_answer(pdf_file, query):
 
 # Streamlit app
 def main():
-    st.title("PDF Query Answering System")
+    st.title("Now, Talk with PDF")
+    st.write("Just upload the PDF document and ask whatever the query is about PDF.")
+    st.write("---")
 
     # Divide layout into three columns
     col1, col2,col3 = st.columns([5, 1, 5])
@@ -60,6 +62,12 @@ def main():
         query = st.text_input("Ask your question:")
     
     with col2:
+        st.write("---")
+        st.write("---")
+        st.write("---")
+        st.write("---")
+        st.write("---")
+        st.write("---")
         st.write("---")
     # Column 2: Display current answers
     with col3:
