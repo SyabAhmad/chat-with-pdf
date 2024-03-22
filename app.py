@@ -8,7 +8,7 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain_openai import OpenAI
 import os
 from dotenv import load_dotenv
-
+import json
 load_dotenv()
 # Set OpenAI API key
 OPENAI_API_KEY = os.getenv("OPENAIAPIKEY")
@@ -43,6 +43,12 @@ def process_pdf_and_answer(pdf_file, query):
     # Perform similarity search and answer query
     docs = document_search.similarity_search(query)
     result = chain.invoke({"input_documents": docs, "question": query})
+    
+    with open("data.txt", "a") as file:  # Open in append mode ("a")
+    # Convert your data (dictionary) to a string format (e.g., JSON)
+        data_string = json.dumps({"question": query, "answer": result["output_text"]})
+        file.write(data_string + "\n")  # Write the string with a newline at the end
+
 
     return result["output_text"]
 
