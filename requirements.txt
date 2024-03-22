@@ -10,3 +10,5 @@ PyQt5==5.15.7
 streamlit==1.32.2
 tiktoken==0.6.0
 python-dotenv
+faiss-cpu
+faiss-gpu
